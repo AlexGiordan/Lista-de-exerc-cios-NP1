@@ -4,5 +4,5 @@
 int main(){
 	printf("\né a moda da vida..");
 	printf("\nIsso é muito complicado...");
-	retutn 0;
+	return 0;
 }
