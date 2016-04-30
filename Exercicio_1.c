@@ -7,9 +7,22 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include "Header.h"
 
 int main(){
+	struct Nodo *Lista;
+
+	Lista = NULL;
+
+	Lista = AlocarLista();
+
 	printf("\né a moda da vida..");
-	printf("\nIsso é muito complicado...");
+	printf("\nIsso é muito complicado...\n\n");
+
+	free(Lista);
 	return 0;
+}
+
+Nodo *AlocarLista(){
+  return (Nodo *) malloc(sizeof(Nodo));
 }

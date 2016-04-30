@@ -1,5 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
 
-typedf struct Nodo{
+typedef struct Nodo{
 	struct Nodo *ProximoNodo;
 	int Infomacao;
 }Nodo;
+
+Nodo *AlocarLista();
