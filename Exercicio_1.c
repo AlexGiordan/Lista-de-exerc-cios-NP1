@@ -13,13 +13,22 @@ int main(){
 	struct Nodo *Lista;
 
 	Lista = NULL;
-//	Lista = AlocarLista();
+	Lista = AlocarLista();
 
 	if (VerificarListaAlocada(Lista)) {
 		printf("\nLista Alocada Com Sucesso!");
 	}
 	else {
 		printf("\nLista Não Foi Alocada!");
+	}
+
+	InicializarListaCircular(Lista);
+
+	if(VerificarSeEstaVazia(Lista)){
+		printf("\nA Lista Esta Vazia!");
+	}
+	else{
+		printf("\nA Lista Não Esta Vazia!");
 	}
 
 	printf("\né a moda da vida..");
@@ -38,4 +47,17 @@ int VerificarListaAlocada(Nodo *Lista){
 		return 0;
 	else
 		return 1;
+}
+
+void 	InicializarListaCircular(Nodo *Lista){
+	Lista->ProximoNodo   = NULL;
+	Lista->Informacao    = 0;
+	Lista->CabecaDaLista = 0;
+}
+
+int VerificarSeEstaVazia(Nodo *Lista){
+	if ((Lista->ProximoNodo == NULL) && (Lista->Informacao == 0) && (Lista->CabecaDaLista == 0))
+		return 1;
+	else
+		return 0;
 }

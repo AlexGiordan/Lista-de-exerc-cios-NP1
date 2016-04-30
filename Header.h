@@ -3,9 +3,14 @@
 
 typedef struct Nodo{
 	struct Nodo *ProximoNodo;
-	int Infomacao;
+	int Informacao;
+	int CabecaDaLista;
 }Nodo;
 
 Nodo *AlocarLista();
 
 int VerificarListaAlocada(Nodo *Lista);
+
+void InicializarListaCircular(Nodo *Lista);
+
+int VerificarSeEstaVazia(Nodo *Lista);
