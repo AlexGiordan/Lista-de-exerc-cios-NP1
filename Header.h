@@ -14,3 +14,5 @@ int VerificarListaAlocada(Nodo *Lista);
 void InicializarListaCircular(Nodo *Lista);
 
 int VerificarSeEstaVazia(Nodo *Lista);
+
+void AtribuirNodoParaALista(Nodo *Lista, int Opcao);

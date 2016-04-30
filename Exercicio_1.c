@@ -31,6 +31,10 @@ int main(){
 		printf("\nA Lista Não Esta Vazia!");
 	}
 
+	AtribuirNodoParaALista(Lista, 0);
+	AtribuirNodoParaALista(Lista, -1);
+	AtribuirNodoParaALista(Lista, 1);
+
 	printf("\né a moda da vida..");
 	printf("\nIsso é muito complicado...\n\n");
 
@@ -61,3 +65,17 @@ int VerificarSeEstaVazia(Nodo *Lista){
 	else
 		return 0;
 }
+
+void AtribuirNodoParaALista(Nodo *Lista, int Opcao){
+	if(Opcao == 0)
+		printf("\nInsere Na Cabeça Da Lista!");
+
+	if(Opcao == 1)
+		printf("\nInsere A Esquerda Da Cabeça Da Lista!");
+
+	if(Opcao == -1)
+		printf("\nInsere A Direita Da Cabeça Da Lista!");
+}
+
+
+
