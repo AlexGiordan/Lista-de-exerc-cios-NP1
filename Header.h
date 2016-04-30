@@ -16,3 +16,9 @@ void InicializarListaCircular(Nodo *Lista);
 int VerificarSeEstaVazia(Nodo *Lista);
 
 void AtribuirNodoParaALista(Nodo *Lista, int Opcao);
+
+void InsirirNodoCabecaLista(Nodo *Lista);
+
+void InsirirNodoDireitaLista(Nodo *Lista);
+
+void InsirirNodoEsquerdaLista(Nodo *Lista);

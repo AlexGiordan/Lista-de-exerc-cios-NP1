@@ -67,15 +67,27 @@ int VerificarSeEstaVazia(Nodo *Lista){
 }
 
 void AtribuirNodoParaALista(Nodo *Lista, int Opcao){
-	if(Opcao == 0)
-		printf("\nInsere Na Cabeça Da Lista!");
 
-	if(Opcao == 1)
-		printf("\nInsere A Esquerda Da Cabeça Da Lista!");
-
-	if(Opcao == -1)
-		printf("\nInsere A Direita Da Cabeça Da Lista!");
+	switch(Opcao){
+		case 0:
+			InsirirNodoCabecaLista(Lista);
+			break;
+		case 1:
+			InsirirNodoDireitaLista(Lista);
+			break;
+		case -1:
+			InsirirNodoEsquerdaLista(Lista);
+			break;
+		default:
+			printf("\nOpção Invalida!");				
+	}
 }
 
+void InsirirNodoCabecaLista(Nodo *Lista){
+	
+}
 
+void InsirirNodoDireitaLista(Nodo *Lista){}
+
+void InsirirNodoEsquerdaLista(Nodo *Lista){}
 
