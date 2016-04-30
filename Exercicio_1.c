@@ -13,8 +13,14 @@ int main(){
 	struct Nodo *Lista;
 
 	Lista = NULL;
+//	Lista = AlocarLista();
 
-	Lista = AlocarLista();
+	if (VerificarListaAlocada(Lista)) {
+		printf("\nLista Alocada Com Sucesso!");
+	}
+	else {
+		printf("\nLista Não Foi Alocada!");
+	}
 
 	printf("\né a moda da vida..");
 	printf("\nIsso é muito complicado...\n\n");
@@ -25,4 +31,11 @@ int main(){
 
 Nodo *AlocarLista(){
   return (Nodo *) malloc(sizeof(Nodo));
+}
+
+int VerificarListaAlocada(Nodo *Lista){
+	if(!Lista)
+		return 0;
+	else
+		return 1;
 }

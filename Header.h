@@ -7,3 +7,5 @@ typedef struct Nodo{
 }Nodo;
 
 Nodo *AlocarLista();
+
+int VerificarListaAlocada(Nodo *Lista);
