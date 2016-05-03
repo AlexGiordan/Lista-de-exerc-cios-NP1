@@ -31,9 +31,11 @@ int main(){
 		printf("\nA Lista Não Esta Vazia!");
 	}
 
-	AtribuirNodoParaALista(Lista, 0);
-	AtribuirNodoParaALista(Lista, -1);
-	AtribuirNodoParaALista(Lista, 1);
+	AtribuirNodoParaALista(Lista, PegarNovaInformacao());
+
+	AtribuirNodoParaALista(Lista, PegarNovaInformacao());
+
+	AtribuirNodoParaALista(Lista, PegarNovaInformacao());
 
 	printf("\né a moda da vida..");
 	printf("\nIsso é muito complicado...\n\n");
@@ -66,28 +68,37 @@ int VerificarSeEstaVazia(Nodo *Lista){
 		return 0;
 }
 
-void AtribuirNodoParaALista(Nodo *Lista, int Opcao){
+void AtribuirNodoParaALista(Nodo *Lista, int Informacao){
+	Nodo *NovoNodo;
 
-	switch(Opcao){
-		case 0:
-			InsirirNodoCabecaLista(Lista);
-			break;
-		case 1:
-			InsirirNodoDireitaLista(Lista);
-			break;
-		case -1:
-			InsirirNodoEsquerdaLista(Lista);
-			break;
-		default:
-			printf("\nOpção Invalida!");				
+	if(VerificarSeEstaVazia(Lista)){
+		Lista->ProximoNodo   = NULL;
+		Lista->CabecaDaLista = 1;
+		Lista->Informacao    = Informacao;
+	
+	}
+	else{
+		NovoNodo = AlocarLista();
+
+		if(VerificarListaAlocada(NovoNodo)){
+
+			NovoNodo->CabecaDaLista = 0;
+			NovoNodo->Informacao    = Informacao;
+			NovoNodo->ProximoNodo   = Lista;
+			Lista->ProximoNodo      = NovoNodo;
+
+		}
+		else{
+			printf("\nOut Of Memory....");
+		}
 	}
 }
 
-void InsirirNodoCabecaLista(Nodo *Lista){
-	
+int PegarNovaInformacao(){
+	int Informacao;
+
+	printf("\nDigite uma informação: ");	
+	scanf("%d", &Informacao);	
+
+	return Informacao;
 }
-
-void InsirirNodoDireitaLista(Nodo *Lista){}
-
-void InsirirNodoEsquerdaLista(Nodo *Lista){}
-
