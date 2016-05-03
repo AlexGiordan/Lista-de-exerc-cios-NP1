@@ -19,3 +19,5 @@ void AtribuirNodoParaALista(Nodo *Lista, int Informacao);
 
 int PegarNovaInformacao();
 
+void ExibirLista(Nodo *Lista);
+

@@ -37,6 +37,8 @@ int main(){
 
 	AtribuirNodoParaALista(Lista, PegarNovaInformacao());
 
+	ExibirLista(Lista);
+
 	printf("\né a moda da vida..");
 	printf("\nIsso é muito complicado...\n\n");
 
@@ -101,4 +103,21 @@ int PegarNovaInformacao(){
 	scanf("%d", &Informacao);	
 
 	return Informacao;
+}
+
+void ExibirLista(Nodo *Lista){
+	Nodo *ListaTemporaria;
+
+	if(VerificarSeEstaVazia(Lista)){
+		printf("\nLista Vazia!!!");
+	}
+	else{
+		do{
+			ListaTemporaria = Lista;
+			printf("\nInformação: %d",ListaTemporaria->Informacao);
+		
+			ListaTemporaria = ListaTemporaria->ProximoNodo;
+
+		}while(ListaTemporaria->CabecaDaLista != 1);
+	}
 }
