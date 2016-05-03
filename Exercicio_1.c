@@ -1,4 +1,4 @@
-/*UNIVERSIDADE FEDERAL DA FRONTEIRA SUL - UFFS
+                                                                                                                                                                                                                                                                                                      /*UNIVERSIDADE FEDERAL DA FRONTEIRA SUL - UFFS
   CIÊNCIA DA COMPUTAÇÃO
 	ALEX GIORDAN
 	ESTRUTURAS DE DADOS 2016/1
@@ -39,9 +39,6 @@ int main(){
 
 	ExibirLista(Lista);
 
-	printf("\né a moda da vida..");
-	printf("\nIsso é muito complicado...\n\n");
-
 	free(Lista);
 	return 0;
 }
@@ -71,28 +68,27 @@ int VerificarSeEstaVazia(Nodo *Lista){
 }
 
 void AtribuirNodoParaALista(Nodo *Lista, int Informacao){
-	Nodo *NovoNodo;
+	Nodo *ElementoAuxiliar, *NovoNodo;
 
 	if(VerificarSeEstaVazia(Lista)){
-		Lista->ProximoNodo   = NULL;
+		Lista->ProximoNodo   = Lista;
 		Lista->CabecaDaLista = 1;
 		Lista->Informacao    = Informacao;
 	
 	}
 	else{
+		ElementoAuxiliar = Lista;
+
 		NovoNodo = AlocarLista();
 
-		if(VerificarListaAlocada(NovoNodo)){
+		while(ElementoAuxiliar->ProximoNodo != Lista)
+			ElementoAuxiliar = ElementoAuxiliar->ProximoNodo;
 
-			NovoNodo->CabecaDaLista = 0;
-			NovoNodo->Informacao    = Informacao;
-			NovoNodo->ProximoNodo   = Lista;
-			Lista->ProximoNodo      = NovoNodo;
+		NovoNodo->CabecaDaLista = 0;
+		NovoNodo->Informacao    = Informacao;
+		NovoNodo->ProximoNodo   = Lista;
+		Lista->ProximoNodo      = NovoNodo;
 
-		}
-		else{
-			printf("\nOut Of Memory....");
-		}
 	}
 }
 
@@ -112,12 +108,11 @@ void ExibirLista(Nodo *Lista){
 		printf("\nLista Vazia!!!");
 	}
 	else{
-		do{
-			ListaTemporaria = Lista;
-			printf("\nInformação: %d",ListaTemporaria->Informacao);
-		
-			ListaTemporaria = ListaTemporaria->ProximoNodo;
+		ListaTemporaria = Lista;
 
-		}while(ListaTemporaria->CabecaDaLista != 1);
+		do{
+			printf("\nInformação: %d\n", ListaTemporaria->Informacao);
+			ListaTemporaria = ListaTemporaria->ProximoNodo;
+		}while(ListaTemporaria != Lista);
 	}
 }
