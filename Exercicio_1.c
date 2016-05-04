@@ -86,7 +86,7 @@ void AtribuirNodoParaALista(Nodo *Lista, int Informacao){
 
 		NovoNodo->CabecaDaLista = 0;
 		NovoNodo->Informacao    = Informacao;
-		NovoNodo->ProximoNodo   = Lista;
+		NovoNodo->ProximoNodo   = ElementoAuxiliar;
 		Lista->ProximoNodo      = NovoNodo;
 
 	}
